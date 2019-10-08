@@ -1,9 +1,5 @@
 <template>
   <div id="app">
-    <!--
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    -->
 
     <!--URLへのリンク生成-->
     <router-link to="/red">
@@ -15,18 +11,22 @@
     <router-link to="/green">
       Green
     </router-link>
+    <router-link to="/">
+      Top
+    </router-link>
+
     <!--遷移時にトランジションさせる-->
     <transition appear mode="out-in">
       <!--URLにアクセスすると下記にコンポーネントの中身を表示-->
       <router-view></router-view>
     </transition>
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 //Appコンポーネントの中で使いたいコンポーネントをimport
+import HelloWorld from './components/HelloWorld.vue'
 import Red from './components/Red.vue';
 import Blue from './components/Blue.vue';
 import Green from './components/Green.vue';
@@ -34,8 +34,8 @@ import Green from './components/Green.vue';
 export default {
   name: 'app',
   components: {
-    HelloWorld,
     //Appコンポーネントの中で使いたいコンポーネントを登録
+    HelloWorld,
     Red,
     Blue,
     Green
